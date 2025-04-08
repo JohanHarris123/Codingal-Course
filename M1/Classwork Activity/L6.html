@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Personal Details Form</title>
+</head>
+
+<body>
+    <h1>Personal Details Form</h1>
+    <form>
+        <fieldset> <!-- The fieldset tag is used to group related elements in a form and draws a box around them-->
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter Name"><br><br>
+
+            <label>Email ID:</label>
+            <input type="email" id="Email" placeholder="Enter email ID"><br><br>
+
+            <label>Contact Number:</label>
+            <input type="password" id="contact" placeholder="Enter Contact Number"><br><br>
+
+            <label>Birthday:</label>
+            <input type="date" id="birthday"><br><br>
+
+            <label>Gender:</label><br>
+            <input type="radio" id="female" name="gender" value="Female">Female<br>
+            <input type="radio" id="male" name="gender" value="Male">Male<br>
+            <input type="radio" id="other" name="gender" value="Other">Other<br><br>
+            <!--name is used to group multiple radio buttons together-->
+            <!--value specifies the actual data sent to the server when the form is submitted-->
+
+            <label>Your Favourite Cities</label><br>
+            <input type="checkbox" id="city1" name="favourite city" value="New Delhi">New Delhi<br>
+            <input type="checkbox" id="city2" name="favourite city" value="Mumbai">Mumbai<br>
+            <input type="checkbox" id="city3" name="favourite city" value="Rome">Rome<br>
+            <input type="checkbox" id="city4" name="favourite city" value="Tokyo">Tokyo<br>
+            <input type="checkbox" id="city5" name="favourite city" value="London">London<br>
+            <input type="checkbox" id="city6" name="favourite city" value="NewYork">New York<br>
+            <input type="checkbox" id="city7" name="favourite city" value="Paris">Paris<br>
+            <input type="checkbox" id="city8" name="favourite city" value="Sydney">Sydney<br>
+            <input type="checkbox" id="city9" name="favourite city" value="Amsterdam">Amsterdam<br>
+            <input type="checkbox" id="city10" name="favourite city" value="Barcelona">Barcelona<br>
+
+            <input type="submit">
+        </fieldset>
+    </form>
+    <br><br>
+    <address>You have given your information and will be guided by our <a
+            href="https://policies.google.com/terms?hl=en">terms of service (ToS)</a></address>
+</body>
+
+</html>
