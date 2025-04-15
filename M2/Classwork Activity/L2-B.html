@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            color: antiquewhite;
+        }
+
+        #gradA {
+            height: 400px;
+            background-color: red;
+            background-image: linear-gradient(to top right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        #gradB {
+            height: 400px;
+            background-color: blue;
+            background-image: radial-gradient(blue, indigo, violet, red, orange, yellow, green);
+        }
+
+        #gradC {
+            height: 400px;
+            background-color: green;
+            background-image: radial-gradient(circle, red, orange, yellow, green, blue, indigo, violet);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gradA">
+        <h1>Gradient A</h1>
+        <p>This is a linear gradient.</p>
+        <p>It goes from red to orange to yellow to green to blue to indigo to violet.</p>
+    </div>
+    <div id="gradB">
+        <h1>Gradient B</h1>
+        <p>This is a radial gradient.</p>
+        <p>It goes from blue to indigo to violet to red to orange to yellow to green.</p>
+    </div>
+    <div id="gradC">
+        <h1>Gradient C</h1>
+        <p>This is a radial gradient.</p>
+        <p>It goes from red to orange to yellow to green to blue to indigo to violet.</p>
+    </div>
+</body>
+
+</html>

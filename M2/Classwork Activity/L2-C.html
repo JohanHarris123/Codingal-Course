@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        @keyframes gradientAnimation {
+            0% {
+                background-color: red;
+            }
+
+            14% {
+                background-color: orange;
+            }
+
+            28% {
+                background-color: yellow;
+            }
+
+            42% {
+                background-color: green;
+            }
+
+            57% {
+                background-color: blue;
+            }
+
+            71% {
+                background-color: indigo;
+            }
+
+            85% {
+                background-color: violet;
+            }
+
+            100% {
+                background-color: red;
+            }
+        }
+
+        #div1 {
+            width: 150px;
+            height: 150px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: rgb(255, 0, 0);
+            animation-name: gradientAnimation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        #div2 {
+            width: 150px;
+            height: 150px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: rgb(255, 0, 0);
+            animation-name: gradientAnimation;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        Hello World!
+    </div>
+    <div id="div2">
+        hello again
+    </div>
+</body>
+
+</html>
