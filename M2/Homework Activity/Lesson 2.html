@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: lightblue;
+            background-image: url("Lesson 2.png");
+            background-size: 250px 350px;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-attachment: fixed;
+        }
+
+        #cHead {
+            color: forestgreen;
+            text-decoration: none;
+            font-size: 40px;
+        }
+
+        #gradA {
+            height: 400px;
+            background-color: red;
+            background-image: linear-gradient(to top right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        #gradB {
+            height: 400px;
+            background-color: blue;
+            background-image: radial-gradient(blue, indigo, violet, red, orange, yellow, green);
+        }
+
+        #gradC {
+            height: 400px;
+            background-color: green;
+            background-image: radial-gradient(circle, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-color: red;
+            }
+
+            14% {
+                background-color: orange;
+            }
+
+            28% {
+                background-color: yellow;
+            }
+
+            42% {
+                background-color: green;
+            }
+
+            57% {
+                background-color: blue;
+            }
+
+            71% {
+                background-color: indigo;
+            }
+
+            85% {
+                background-color: violet;
+            }
+
+            100% {
+                background-color: red;
+            }
+        }
+
+        #div1 {
+            width: 150px;
+            height: 150px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: rgb(255, 0, 0);
+            animation-name: gradientAnimation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="cHead">Formatting Backgrounds</h1>
+    <p>See the background for part one</p>
+    <h2 id="cHead">Gradients</h2>
+    <div id="gradA">
+        <h1>Gradient A</h1>
+        <p>This is a linear gradient.</p>
+        <p>It goes from red to orange to yellow to green to blue to indigo to violet.</p>
+    </div>
+    <div id="gradB">
+        <h1>Gradient B</h1>
+        <p>This is a radial gradient.</p>
+        <p>It goes from blue to indigo to violet to red to orange to yellow to green.</p>
+    </div>
+    <div id="gradC">
+        <h1>Gradient C</h1>
+        <p>This is a radial gradient.</p>
+        <p>It goes from red to orange to yellow to green to blue to indigo to violet.</p>
+    </div>
+    <h1 id="cHead">Animations</h1>
+    <div id="div1">
+        Hello World!
+    </div>
+</body>
