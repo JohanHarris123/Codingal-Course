@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Bootstrap Grid System</title>
+
+    <meta charset="utf-8">
+    <!-- It is the most widely used encoding because it supports characters from almost all languages-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Makes the webpage responsive for mobile devices. Without this tag, websites may appear zoomed out or improperly sized on small screens.-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!--This loads Bootstrap’s CSS framework.-->
+
+    <style>
+        .col {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>Equal width column grid</h3>
+    <div class="container">
+        <!--class="container" is a Bootstrap class that:
+        1. Centers the content horizontally.
+        2. Adds padding around the content.
+        3. Makes the layout responsive.
+        -->
+        <div class="row">
+            <div class="col">
+                column 1
+            </div>
+            <div class="col">
+                column 2
+            </div>
+            <div class="col">
+                column 3
+            </div>
+            <div class="col">
+                column 4
+            </div>
+            <div class="col">
+                column 5
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
