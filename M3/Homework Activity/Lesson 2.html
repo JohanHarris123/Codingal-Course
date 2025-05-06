@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Combined Examples</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--I dont know which link to put so I put all the links that have been used for the other files.-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+        .col {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        mark {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h1 align="center">Bootstrap Combined Examples</h1>
+    <!-- Section 1: Equal Width Columns -->
+    <div class="container">
+        <h3>Equal Width Column Grid</h3>
+        <div class="row">
+            <div class="col">Column 1</div>
+            <div class="col">Column 2</div>
+            <div class="col">Column 3</div>
+            <div class="col">Column 4</div>
+            <div class="col">Column 5</div>
+        </div>
+    </div>
+
+    <!-- Section 2: Responsive Column Sizes -->
+    <div class="container">
+        <h3>Responsive Columns</h3>
+        <p>Resize the browser window to see the effect</p>
+        <div class=" row">
+            <div class="col-lg-4 col-md-8" style="background-color:red; border:1px solid black;">
+                .col-md-8
+            </div>
+            <div class="col-lg-7 col-md-3" style="background-color:lavender;">
+                .col-md-3
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color:lightcyan;">.col-md-6</div>
+            <div class="col-md-6" style="background-color:greenyellow;">.col-md-6</div>
+        </div>
+    </div>
+
+    <!-- Section 3: Container-Fluid with Large Grid -->
+    <div class="container-fluid">
+        <h3>Large Grid with Container-Fluid</h3>
+        <p>Resize the browser window to see the effect.</p>
+        <div class="row">
+            <div class="col-lg-4" style="background-color: yellow;">dummy</div>
+            <div class="col-lg-8" style="background-color: pink;">dummy</div>
+        </div>
+    </div>
+
+    <!-- Section 4: Typography -->
+    <div class="container">
+        <h3>Typography Examples</h3>
+        <h1 class="display-1">Codingal</h1>
+        <h1 class="display-2">Codingal</h1>
+        <h1 class="display-3">Codingal</h1>
+        <h1 class="display-4">Codingal</h1>
+
+        <br><br>
+
+        <h1>Secondary Text with <code>&lt;small&gt;</code> and <code>.text-warning</code><br>
+            <small class="text-warning">Hello Codingal</small>
+        </h1>
+    </div>
+
+    <!-- Section 5: Mark and Code Snippets -->
+    <div class="container-fluid">
+        <h3>Highlight and Code</h3>
+        <p>Use the mark element to <mark>highlight</mark> text.</p>
+    </div>
+
+    <div class="container">
+        <h3>Code Snippets</h3>
+        <p>Inline snippets of code should be embedded in the code element:</p>
+        <p>The following HTML elements: <code>var x = 10;</code>, <code>section</code>, and <code>div</code></p>
+    </div>
+
+    <!-- Section 6: Miscellaneous Elements -->
+    <div class="container">
+        <h3>Abbreviations</h3>
+        <p><abbr title="Codingal"><b>CDGL</b></abbr> was founded in 2020.</p>
+
+        <h3>Blockquotes</h3>
+        <blockquote class="blockquote">
+            <p>Codingal is on a mission to inspire all the school kids</p>
+            <footer class="blockquote-footer">From Codingal</footer>
+        </blockquote>
+
+        <h3>Multiple Lines of Code</h3>
+        <pre>
+            var num1 = 5;
+            var num2 = 6;
+            var sum = num1 + num2;
+        </pre>
+
+        <h3>Keyboard Inputs</h3>
+        <p>Use <kbd>ctrl + p</kbd> to open the print dialog box.</p>
+
+        <h3>Color Picker</h3>
+        <input type="color">
+    </div>
+    <br><br><br>
+
+</body>
+
+</html>
