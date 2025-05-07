@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Positioning & Opacity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1,
+        h2 {
+            color: darkblue;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        /* Opacity styles */
+        .first {
+            opacity: 0.1;
+        }
+
+        .second {
+            opacity: 0.3;
+        }
+
+        .third {
+            opacity: 0.6;
+        }
+
+        .default-opacity {
+            opacity: 1;
+        }
+
+        .box {
+            background-color: greenyellow;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #444444;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 10px;
+            background-color: yellow;
+            border: 3px dashed orange;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 220px;
+            background-color: lightblue;
+            border: 3px solid rgb(91, 7, 247);
+        }
+
+        .relative-container {
+            position: relative;
+            margin-top: 400px;
+            border: 3px solid #73AD21;
+            padding: 20px;
+            background-color: #f9ffe6;
+        }
+
+        .absolute {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            border: 3px solid blue;
+            background-color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Positioning & Opacity</h1>
+
+    <div class="section">
+        <h2>Opacity Examples</h2>
+        <div class="box first">Opacity 0.1</div>
+        <div class="box second">Opacity 0.3</div>
+        <div class="box third">Opacity 0.6</div>
+        <div class="box default-opacity">Opacity 1.0 (Default)</div>
+    </div>
+
+    <div class="section">
+        <h2>Positioning Examples</h2>
+
+        <div class="box">Static Position (default)</div>
+
+        <div class="box sticky">
+            Sticky Position — scroll to see how it sticks to the top!
+        </div>
+
+        <div class="relative-container">
+            <p>Relative container (with nested absolute box):</p>
+            <div class="absolute">
+                Absolute inside relative
+            </div>
+        </div>
+
+        <div class="box fixed">
+            Fixed Position — stays in place while scrolling.
+        </div>
+    </div>
+
+    <!-- Just to add scroll space -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
