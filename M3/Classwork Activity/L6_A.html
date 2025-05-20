@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body style="background-color: #876ca1;">
+    <div class="container">
+        <h2 style="color: rgb(0,255,213);">Random Carousel</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!--
+            1. class="carousel slide": Boostrap classes that define the carousel behavior.
+            2. data-ride="carousel": Tells Boostrap to automatically start sliding on page load.
+            -->
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <!--This opens an ordered list (dots below the carousel) that indicate how many slides are there.-->
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <!--data-target="#myCarousel" - Tells the browser which carousel this indicator belongs to-->
+                <!--data-slide-to:"If I'm clicked, jump to slide number 0."-->
+                <!--class="active" -- Highlights this indicator as the currently active one (the one showing)-->
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <!--Wraps all the carousel slides.-->
+                <div class="item active">
+                    <img src="L6_picture1.png" alt="Slide 1">
+                </div>
+                <!--
+                class="item active" - This marks the first image-->
+
+                <div class="item">
+                    <img src="L6_picture2.png" alt="Slide 2">
+                </div>
+                <!--class="item" -- Makes this <div> as a slide in the carousel.-->
+
+                <div class="item">
+                    <img src="L6_picture3.png" alt="Slide 3">
+                </div>
+
+                <div class="item">
+                    <img src="L6_picture4.png" alt="Slide 4">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <!--
+                left carousel-control: This creates a button on the left side of your carousel that lets users move to the next slide.
+                glyphicon: Base class that tells Boostrap you're using a glyphicon
+                glyphicon-chevron-left: Specifies which icon to use-in this case, a left arrow (chevron-left)-->
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+</body>
+
+</html>

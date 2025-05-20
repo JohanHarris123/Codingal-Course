@@ -6,12 +6,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        #box {
+            border-radius: 30px;
+        }
+
+        #box:hover {
+            box-shadow: 20px 9px 10px yellow;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container mt-5 ml-5">
-        <div class="card" style="width: 250px;">
-            <img class="card-img-top" src="L5_picture.png" alt="Card image">
+        <div id="box" class="card" style="width: 250px;">
+            <img id="box" class="card-img-top" src="L5_picture.png" alt="Card image" style="padding:10px;">
             <div class="card-body">
                 <h4 class="card-title">Lemons</h4>
                 <p class="card-text">Lemons are cool</p>
