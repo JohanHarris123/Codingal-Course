@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Numbers and Date</title>
+</head>
+
+<body>
+    <h2>Random Set of Numbers:</h2>
+    <div id="randomNumbers"></div>
+
+    <h2>Current Date:</h2>
+    <div id="currentDate"></div>
+
+    <h2>Rounded Random Number:</h2>
+    <div id="roundedRandom"></div>
+
+    <script>
+        // Generate a random set of 5 numbers between 1 and 100
+        var numbers = [];
+        for (var i = 0; i < 5; i++) {
+            numbers.push(Math.floor(Math.random() * 100) + 1);
+        }
+        document.getElementById("randomNumbers").innerHTML = numbers.join(", ");
+
+        // Display current date
+        document.getElementById("currentDate").innerHTML = new Date();
+
+        // Generate a random number and round it to 2 decimal places
+        var randomNum = Math.random() * 100;
+        document.getElementById('roundedRandom').innerHTML = Math.round(randomNum * 100) / 100; 
+    </script>
+</body>
+
+</html>

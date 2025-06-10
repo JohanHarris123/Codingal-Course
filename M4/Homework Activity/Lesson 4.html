@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Number Trigonometry Functions</title>
+</head>
+
+<body>
+    <h2>Random Number Trigonometry Functions</h2>
+    <p id="randomNum"></p>
+    <p id="sin"></p>
+    <p id="cos"></p>
+    <p id="tan"></p>
+
+    <script>
+        // Generate a random number between 0 and 2π
+        var randomNum = Math.random() * 100;
+        // Calculate sin, cos, tan
+        var sin = Math.sin(randomNum);
+        var cos = Math.cos(randomNum);
+        var tan = Math.tan(randomNum);
+
+        // Display the results
+        document.getElementById('randomNum').innerHTML = "Random Number: " + randomNum;
+        document.getElementById('sin').innerHTML = "sin: " + sin;
+        document.getElementById('cos').innerHTML = "cos: " + cos;
+        document.getElementById('tan').innerHTML = "tan: " + tan;
+    </script>
+</body>
+
+</html>
