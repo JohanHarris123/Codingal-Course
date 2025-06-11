@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Click the button to get a time-based greeting:</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="hour"></p>
+    <p id="greet"></p>
+    <script>
+        function myFunction() {
+            var greeting;
+            var time = new Date().getHours();
+            //new Date() creates a Date object, which lets you extract details like year, month, day, hour, minute, second, etc. Date() without new just returns the current date and time as a string, not as an object.
+
+            if (time < 10) {
+                greeting = "Good morning!";
+            } else if (time < 20) {
+                greeting = "Good day!";
+            } else {
+                greeting = "Good evening!";
+            }
+            document.getElementById("hour").innerHTML = "The current hour is: " + time;
+            document.getElementById("greet").innerHTML = greeting;
+        }
+    </script>
+</body>
+
+</html>

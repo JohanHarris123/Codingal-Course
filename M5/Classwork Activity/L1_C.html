@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript While Loop</h2>
+    <p id="number"></p>
+    <script>
+        var text = "";
+        var i = 1;
+        while (true) {
+            if (i > 10) {
+                break;
+            }
+            text = text + "<br> The number is " + i;
+            i++; //increments value of i by 1  
+            document.getElementById("number").innerHTML = text;
+        }
+
+    </script>
+</body>
+
+</html>
