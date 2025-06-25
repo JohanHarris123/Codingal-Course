@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Promise</h2>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+        function sum(a, b) {
+            var sum = a + b;
+            myDisplayer(sum);
+        }
+        let myPromise = new Promise(function (myResolve, myReject) {
+            //producing code may take some time
+            let x = 5; //some code (try to change x to 5)
+
+            if (x == 0) {
+                myResolve("OK"); // when successful
+            }
+            else {
+                myReject("Error"); // when error
+            }
+        });
+        // consuming code - must wait for fullfilled promise
+        myPromise.then(
+            function (value) { sum(5, 5); }, // code is successful
+            function (error) { sum(error); }
+        );
+    </script>
+</body>
+
+</html>
+
+<!--
+Producing code: This is the code that performs an operation and either resolves or rejects the Promise depending on the result.
+
+Consuming code: This is the code that waits for the promise to be completed (fulfilled or rejected) and then acts on it.
+
+The Promise constructor takes a function with two parameters: resolve and reject.
+These are functions provided by JavaScript, and you call them depending on how your asynchronous operation goes.
+-->
