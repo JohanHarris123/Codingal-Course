@@ -1,0 +1,23 @@
+body {
+    background: #252525;
+    font-family: "Baloo Tamma 2", cursive;
+    scroll-behavior: smooth;
+}
+
+/* Main Heading Font */
+.m-heading {
+    font-family: "Roboto Slab", serif;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 10);
+}
+
+/* Main Container height */
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("L1_B.png");
+    background-attachment: fixed;
+    background-size: cover;
+}
