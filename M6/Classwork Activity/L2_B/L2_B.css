@@ -1,0 +1,21 @@
+/* Global Properties */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to bottom, lightblue, lightpink);
+    font-family: "Baloo Tamma 2", cursive;
+}
+
+.card {
+    border: 2px solid #000;
+    background-color: violet;
+    color: white;
+}
+
+.btn {
+    border: 2px solid #000;
+    background-color: blueviolet;
+    color: white;
+}
