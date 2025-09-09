@@ -1,1 +1,5 @@
-Hello again world! This is Codingal
+file in write mode...
+HI! I AM A PENGUIN. I AM 1 YR. OLD
+
+FILE IN APPEND MODE...HI! I AM A PENGUIN. I AM 1 YR. OLDHELLO AGAIN WORLD! THIS IS CODINGALHI! I AM PENGUIN AND I AM 1 YR OLD.
+coding is fun!

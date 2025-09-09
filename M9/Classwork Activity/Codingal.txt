@@ -1,4 +1,5 @@
 File in write mode...
 Hi! I am a Penguin. I am 1 yr. old
 
-File in append mode...Hi! I am a Penguin. I am 1 yr. oldHello again world! This is Codingal
+File in append mode...Hi! I am a Penguin. I am 1 yr. oldHello again world! This is CodingalHi! I am Penguin and I am 1 yr old.
+Coding is fun!
