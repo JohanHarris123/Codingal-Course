@@ -1,0 +1,8 @@
+Hi! I am Penguin and I am 1 yr old.
+Hi! I am Penguin and I am 1 yr old.
+Hello World!
+file in write mode...
+HI! I AM A PENGUIN. I AM 1 YR. OLD
+
+FILE IN APPEND MODE...HI! I AM A PENGUIN. I AM 1 YR. OLDHELLO AGAIN WORLD! THIS IS CODINGALHI! I AM PENGUIN AND I AM 1 YR OLD.
+coding is fun!
