@@ -1,17 +1,40 @@
+import tkinter as tk
 import random as r
 
 chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()"
-while True:
-    password_length = int(input("==========================\nEnter the number of characters you want for your password (minimum of 8 characters): "))
-    if password_length < 8:
-        print("==========================\nPassword length must be at least 8 characters. Please try again.")
-        continue
+
+def generate_password():
+    user_input = entry_length.get()
+    if not user_input.isdigit():
+        output["text"] = "Please enter a number."
+        output["fg"] = "red"
+        return
+    
+    length = int(user_input)
+    if length < 8:
+        output["text"] = "Password must be at least 8 characters."
+        output["fg"] = "red"
     else:
-        print("Your password is: ", ''.join(r.choices(chars, k=password_length)))
-        print("Do you want to exit? (1=Yes, 2=No)")
-        exit_choice = int(input())
-        if exit_choice == 1:
-            print('==========================\n')
-            break
-        else:
-            continue
+        password = ''.join(r.choices(chars, k=length))
+        output["text"] = f"Your password: {password}"
+        output["fg"] = "green"
+
+root = tk.Tk()
+root.title("Password Generator")
+
+label = tk.Label(root, text="Enter password length (min 8):")
+label.pack(pady=5)
+
+entry_length = tk.Entry(root)
+entry_length.pack(pady=5)
+
+generate_btn = tk.Button(root, text="Generate Password", command=generate_password)
+generate_btn.pack(pady=10)
+
+output = tk.Label(root, text="")
+output.pack(pady=10)
+
+exit_btn = tk.Button(root, text="Exit", command=root.quit)
+exit_btn.pack(pady=5)
+
+root.mainloop()
