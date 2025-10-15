@@ -8,3 +8,4 @@ for num in range(10, 100):
         primes.append(num)
 
 print("Prime numbers between 10 and 99:", primes)
+#Lists down all the prime numbers between 10 and 99
