@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Mapping and Sorting</title>
+</head>
+<body>
+    <h1>Array Mapping and Sorting</h1>
+    <p>Original Array: <span id="original"></span></p>
+    <p>Mapped Array: <span id="mapped"></span></p>
+    <p>Ascending Order: <span id="ascending"></span></p>
+    <p>Descending Order: <span id="descending"></span></p>
+
+    <script>
+        var numbers = [5, 2, 8, 1, 9, 3];
+        
+        document.getElementById("original").innerHTML = numbers;
+        
+        var mappedArray = [];
+        for (var i = 0; i < numbers.length; i = i + 1) {
+            mappedArray[i] = numbers[i] * 2;
+        }
+        
+        document.getElementById("mapped").innerHTML = mappedArray;
+        
+        var ascendingArray = [];
+        for (var i = 0; i < mappedArray.length; i = i + 1) {
+            ascendingArray[i] = mappedArray[i];
+        }
+        
+        for (var i = 0; i < ascendingArray.length; i = i + 1) {
+            for (var j = i + 1; j < ascendingArray.length; j = j + 1) {
+                if (ascendingArray[i] > ascendingArray[j]) {
+                    var temp = ascendingArray[i];
+                    ascendingArray[i] = ascendingArray[j];
+                    ascendingArray[j] = temp;
+                }
+            }
+        }
+        
+        document.getElementById("ascending").innerHTML = ascendingArray;
+        
+        var descendingArray = [];
+        for (var i = 0; i < mappedArray.length; i = i + 1) {
+            descendingArray[i] = mappedArray[i];
+        }
+        
+        for (var i = 0; i < descendingArray.length; i = i + 1) {
+            for (var j = i + 1; j < descendingArray.length; j = j + 1) {
+                if (descendingArray[i] < descendingArray[j]) {
+                    var temp = descendingArray[i];
+                    descendingArray[i] = descendingArray[j];
+                    descendingArray[j] = temp;
+                }
+            }
+        }
+        
+        document.getElementById("descending").innerHTML = descendingArray;
+    </script>
+</body>
+</html>

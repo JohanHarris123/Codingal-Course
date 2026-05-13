@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Countdown Checker</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 40%, #ffb347 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #ffd1a4;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            padding: 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 14px;
+            color: #d14564;
+            font-size: 2rem;
+        }
+
+        p {
+            margin: 0 0 24px;
+            color: #6a4c9e;
+            font-size: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 16px;
+            text-align: left;
+            font-weight: bold;
+            color: #673ab7;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px 14px;
+            margin-top: 8px;
+            border: 2px solid #ffd1a4;
+            border-radius: 12px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(90deg, #ff758c, #ff7eb3);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .result,
+        .review {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 16px;
+            background: #fff7ec;
+            border: 1px solid #ffd1a4;
+            text-align: left;
+            white-space: pre-line;
+        }
+
+        .review {
+            background: #fbf3ff;
+            border-color: #e7d7ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Birthday Countdown Checker</h1>
+        <p>Enter your name and birthday to see how many days are left until your next celebration.</p>
+
+        <form id="birthdayForm">
+            <label>
+                Name
+                <input id="nameInput" type="text" placeholder="Your name" required />
+            </label>
+
+            <label>
+                Birthday
+                <input id="birthdayInput" type="date" required />
+            </label>
+
+            <button type="submit">Check Countdown</button>
+        </form>
+
+        <div id="result" class="result"></div>
+        <div id="review" class="review"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('birthdayForm');
+        const nameInput = document.getElementById('nameInput');
+        const birthdayInput = document.getElementById('birthdayInput');
+        const resultBox = document.getElementById('result');
+        const reviewBox = document.getElementById('review');
+
+        function getDaysUntilBirthday(birthdayString) {
+            const today = new Date();
+            const birthDate = new Date(birthdayString);
+            const currentYear = today.getFullYear();
+            let nextBirthday = new Date(currentYear, birthDate.getMonth(), birthDate.getDate());
+
+            if (nextBirthday < today) {
+                nextBirthday = new Date(currentYear + 1, birthDate.getMonth(), birthDate.getDate());
+            }
+
+            const oneDay = 1000 * 60 * 60 * 24;
+            const timeDifference = nextBirthday - today;
+            return Math.ceil(timeDifference / oneDay);
+        }
+
+        function buildCountdownReview(daysLeft) {
+            let reviewText = 'Countdown review:';
+            const count = Math.min(daysLeft, 7);
+
+            for (let i = 1; i <= count; i += 1) {
+                reviewText += `\nDay ${i}: ${daysLeft - (count - i)} days to go`;
+            }
+
+            if (daysLeft === 0) {
+                reviewText += '\nToday is the birthday! Celebrate with cake and wishes.';
+            } else if (daysLeft > 7) {
+                reviewText += '\nKeep watching the days pass and get ready to celebrate soon!';
+            }
+
+            return reviewText;
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = nameInput.value.trim() || 'Friend';
+            const birthdayValue = birthdayInput.value;
+
+            if (!birthdayValue) {
+                resultBox.textContent = 'Please choose your birthday before checking the countdown.';
+                reviewBox.textContent = '';
+                return;
+            }
+
+            const daysLeft = getDaysUntilBirthday(birthdayValue);
+            let message = `Hello, ${name}! `;
+
+            if (daysLeft === 0) {
+                message += 'Happy Birthday! Today is your special day! 🎉';
+            } else if (daysLeft === 1) {
+                message += 'Just 1 day left until your birthday! Get excited! 🎂';
+            } else if (daysLeft <= 7) {
+                message += `Only ${daysLeft} days left. Your birthday is this week! 🎈`;
+            } else if (daysLeft <= 30) {
+                message += `There are ${daysLeft} days left. Your birthday is coming soon! 🎁`;
+            } else {
+                message += `Your birthday is ${daysLeft} days away. Time to start planning a fun celebration! 🥳`;
+            }
+
+            resultBox.textContent = message;
+            reviewBox.textContent = buildCountdownReview(daysLeft);
+        });
+    </script>
+</body>
+
+</html>

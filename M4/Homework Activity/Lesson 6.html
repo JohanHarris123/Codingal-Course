@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<body>
-    
-    <script>
+<head>
+    <title>Page Title</title>
+</head>
 
+<body>
+    <button onclick="displayTitle()">Click Me</button>
+    <p id="para1"></p>
+    <p id="para2"></p>
+
+    <script>
+        function displayTitle() {
+            const titleText = document.title;
+            document.getElementById("para1").textContent = titleText;
+            document.getElementById("para2").textContent = titleText;
+        }
     </script>
 </body>
+
 </html>
