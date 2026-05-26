@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>School Event Data Viewer - Lesson 5</title>
+	<style>
+		body{font-family:Segoe UI,Roboto,Arial;margin:2rem;background:#f6f8fb;color:#111}
+		.card{background:#fff;border-radius:8px;padding:1.25rem;max-width:700px;margin:0 auto;box-shadow:0 6px 18px rgba(20,30,40,0.08)}
+		pre{background:#0b1320;color:#dff7ff;padding:1rem;border-radius:6px;overflow:auto}
+		.loading{font-weight:600;color:#0b5fff}
+		.event-list{margin-top:1rem}
+		.event{padding:.6rem;border-radius:6px;border:1px solid #e6eef8;margin-bottom:.6rem}
+		.muted{color:#556}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<h1>School Event Data Viewer</h1>
+		<p class="muted">This demo simulates fetching event data, serializing to JSON, parsing it back, and displaying results.</p>
+
+		<div id="status" class="loading">Ready</div>
+
+		<h3>JSON Text (serialized)</h3>
+		<pre id="jsonText">(no data)</pre>
+
+		<h3>Parsed Events</h3>
+		<div id="events" class="event-list">(no events)</div>
+
+		<button id="startBtn">Load Events</button>
+	</div>
+
+	<script>
+		const startBtn = document.getElementById('startBtn');
+		const status = document.getElementById('status');
+		const jsonText = document.getElementById('jsonText');
+		const eventsDiv = document.getElementById('events');
+
+		function simulateFetch() {
+			const data = {
+				school: 'Greenwood High',
+				dateFetched: new Date().toISOString(),
+				events: [
+					{ id: 1, title: 'Science Fair', date: '2026-06-10', time: '10:00', location: 'Auditorium' },
+					{ id: 2, title: 'Sports Day', date: '2026-06-15', time: '08:00', location: 'Playground' },
+					{ id: 3, title: 'Art Exhibition', date: '2026-06-20', time: '14:00', location: 'Hall B' }
+				]
+			};
+			return new Promise(resolve => setTimeout(() => resolve(data), 1500));
+		}
+
+		async function loadAndShow() {
+			status.textContent = 'Loading events from server...';
+			eventsDiv.innerHTML = '(loading...)';
+			jsonText.textContent = '(serializing...)';
+			startBtn.disabled = true;
+
+			try {
+				const fetched = await simulateFetch();
+
+				
+				const text = JSON.stringify(fetched, null, 2);
+				jsonText.textContent = text;
+
+				
+				const parsed = JSON.parse(text);
+
+				
+				eventsDiv.innerHTML = '';
+				const header = document.createElement('div');
+				header.className = 'muted';
+				header.textContent = `School: ${parsed.school} — Fetched: ${parsed.dateFetched}`;
+				eventsDiv.appendChild(header);
+
+				parsed.events.forEach(ev => {
+					const el = document.createElement('div');
+					el.className = 'event';
+					el.innerHTML = `<strong>${ev.title}</strong> <span class="muted">(${ev.date} ${ev.time})</span><div>${ev.location}</div>`;
+					eventsDiv.appendChild(el);
+				});
+
+				status.textContent = 'Events loaded successfully.';
+			} catch (err) {
+				status.textContent = 'Error loading events.';
+				jsonText.textContent = err.toString();
+				eventsDiv.innerHTML = '(no events)';
+			} finally {
+				startBtn.disabled = false;
+			}
+		}
+
+		startBtn.addEventListener('click', loadAndShow);
+	</script>
+</body>
+</html>

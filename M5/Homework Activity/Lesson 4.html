@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Try/Catch Error Demo</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px
+        }
+
+        #msg {
+            margin-top: 12px;
+            color: #a00
+        }
+
+        button {
+            padding: 8px 12px
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Try / Catch Error Demo</h3>
+    <p>Click the button to run code that will throw an error. The error is caught and shown below.</p>
+    <button id="run">Run code (will error)</button>
+    <div id="msg" aria-live="polite"></div>
+
+    <script>
+        document.getElementById('run').addEventListener('click', function () {
+            var out = document.getElementById('msg');
+            out.textContent = '';
+            try {
+                var notAFunction = null;
+                notAFunction();
+            } catch (err) {
+                out.textContent = 'An error occurred: ' + (err && err.message ? err.message : String(err));
+            }
+        });
+    </script>
+</body>
+
+</html>

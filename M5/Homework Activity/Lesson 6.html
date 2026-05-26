@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f7ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            padding: 24px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            margin: 14px 0 6px;
+            font-weight: 600;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 6px;
+            background: #3b82f6;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .message {
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .message.error {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .message.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .pass-card {
+            margin-top: 18px;
+            padding: 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+        .pass-card h2 {
+            margin-top: 0;
+        }
+        .loader {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Registration</h1>
+        <form id="registrationForm" novalidate>
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" required>
+
+            <label for="studentAge">Age</label>
+            <input type="number" id="studentAge" name="studentAge" placeholder="Enter your age" min="6" max="99" required>
+
+            <label for="studentEmail">Email</label>
+            <input type="email" id="studentEmail" name="studentEmail" placeholder="Enter your email" required>
+
+            <label for="studentSchool">School</label>
+            <input type="text" id="studentSchool" name="studentSchool" placeholder="Enter your school name" required>
+
+            <label for="eventCourse">Event Course</label>
+            <select id="eventCourse" name="eventCourse" required>
+                <option value="">Choose a course</option>
+                <option value="Robotics">Robotics</option>
+                <option value="Coding Basics">Coding Basics</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Game Development">Game Development</option>
+            </select>
+
+            <label for="eventDate">Event Date</label>
+            <input type="date" id="eventDate" name="eventDate" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div id="feedback" class="message" style="display:none"></div>
+        <div id="loader" class="loader" style="display:none">Generating your event pass...</div>
+        <div id="eventPass" class="pass-card" style="display:none"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const feedback = document.getElementById('feedback');
+        const loader = document.getElementById('loader');
+        const eventPass = document.getElementById('eventPass');
+
+        function showMessage(text, type) {
+            feedback.textContent = text;
+            feedback.className = `message ${type}`;
+            feedback.style.display = 'block';
+        }
+
+        function hideMessage() {
+            feedback.style.display = 'none';
+        }
+
+        function generatePassId() {
+            return 'EVT-' + Math.floor(100000 + Math.random() * 900000);
+        }
+
+        function showEventPass(details) {
+            eventPass.innerHTML = `
+                <h2>Event Pass Created</h2>
+                <p><strong>Name:</strong> ${details.name}</p>
+                <p><strong>Course:</strong> ${details.course}</p>
+                <p><strong>Date:</strong> ${details.date}</p>
+                <p><strong>Pass ID:</strong> ${details.passId}</p>
+                <p><strong>Note:</strong> Save this pass for event entry.</p>
+            `;
+            eventPass.style.display = 'block';
+        }
+
+        function validateForm(data) {
+            const errors = [];
+            if (!data.name.trim()) errors.push('Student name is required.');
+            if (!data.age || data.age < 6 || data.age > 99) errors.push('Enter an age between 6 and 99.');
+            if (!data.email.trim()) errors.push('Email is required.');
+            if (data.email && !/^\S+@\S+\.\S+$/.test(data.email)) errors.push('Enter a valid email address.');
+            if (!data.school.trim()) errors.push('School name is required.');
+            if (!data.course) errors.push('Select an event course.');
+            if (!data.date) errors.push('Pick an event date.');
+            return errors;
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            hideMessage();
+            eventPass.style.display = 'none';
+
+            const formData = {
+                name: document.getElementById('studentName').value,
+                age: Number(document.getElementById('studentAge').value),
+                email: document.getElementById('studentEmail').value,
+                school: document.getElementById('studentSchool').value,
+                course: document.getElementById('eventCourse').value,
+                date: document.getElementById('eventDate').value,
+            };
+
+            const errors = validateForm(formData);
+            if (errors.length > 0) {
+                showMessage(errors.join(' '), 'error');
+                return;
+            }
+
+            loader.style.display = 'block';
+            showMessage('Validation successful. Preparing your pass...', 'success');
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+                const passId = generatePassId();
+                showEventPass({
+                    name: formData.name,
+                    course: formData.course,
+                    date: formData.date,
+                    passId: passId
+                });
+            }, 1200);
+        });
+    </script>
+</body>
+</html>

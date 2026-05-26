@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background: #b22222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 2.8rem;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #555;
+    }
+
+    .section-title {
+      margin: 60px 0 20px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fafafa;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+
+    .card-content p {
+      margin: 0 0 15px;
+      color: #666;
+    }
+
+    .card-content span {
+      display: inline-block;
+      font-weight: 700;
+      color: #b22222;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.65));
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover .overlay {
+      opacity: 1;
+    }
+
+    .portfolio-item .overlay h4 {
+      margin: 0 0 5px;
+      font-size: 1.1rem;
+    }
+
+    .portfolio-item .overlay p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    footer {
+      padding: 20px 0;
+      text-align: center;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>La Tavola Restaurant</h1>
+      <p>Fine dining with fresh ingredients, seasonal dishes, and an unforgettable atmosphere.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Discover Our Special Menu</h1>
+      <p>Explore chef-selected favorites and seasonal creations for every appetite.</p>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Our Menu</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="card">
+          <img src="https://via.placeholder.com/400x260.png?text=Signature+Pasta" alt="Signature Pasta">
+          <div class="card-content">
+            <h3>Signature Pasta</h3>
+            <p>Handmade pasta tossed with roasted tomatoes, basil, and parmesan cream.</p>
+            <span>$18</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x260.png?text=Grilled+Salmon" alt="Grilled Salmon">
+          <div class="card-content">
+            <h3>Grilled Salmon</h3>
+            <p>Fresh Atlantic salmon served with lemon butter, roasted vegetables, and quinoa.</p>
+            <span>$24</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x260.png?text=Harvest+Salad" alt="Harvest Salad">
+          <div class="card-content">
+            <h3>Harvest Salad</h3>
+            <p>Seasonal greens, roasted squash, goat cheese, candied pecans, and apple vinaigrette.</p>
+            <span>$14</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Portfolio</h2>
+        <p>Browse our plated dishes, interior design, and event catering moments.</p>
+      </div>
+      <div class="portfolio">
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/600x400.png?text=Restaurant+Interior" alt="Restaurant Interior">
+          <div class="overlay">
+            <h4>Elegant Interior</h4>
+            <p>A warm dining room with soft lighting and comfortable seating.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/600x400.png?text=Chef+Specialty" alt="Chef Specialty">
+          <div class="overlay">
+            <h4>Chef's Specialty</h4>
+            <p>Creative presentation for seasonal ingredients and bold flavors.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/600x400.png?text=Event+Catering" alt="Event Catering">
+          <div class="overlay">
+            <h4>Event Catering</h4>
+            <p>Customized menus for weddings, parties, and private reservations.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/600x400.png?text=Dessert+Platter" alt="Dessert Platter">
+          <div class="overlay">
+            <h4>Dessert Platter</h4>
+            <p>Beautifully arranged sweets to finish every meal on a high note.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Contact us for reservations and special events. &copy; 2026 La Tavola Restaurant</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #111;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #0073e6;
+    }
+
+    .banner {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+    .banner-content {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+      padding: 0 20px;
+    }
+
+    .banner-content h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    .banner-content p {
+      margin: 12px 0 0;
+      font-size: 1.1rem;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">BrandName</a>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+    <img src="https://via.placeholder.com/1200x400.png?text=Banner+Image" alt="Website banner">
+    <div class="banner-content">
+      <h1>Welcome to Our Website</h1>
+      <p>Creating a clean layout with a navigation bar and a banner image.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <p>Use this area for page content after the banner.</p>
+  </main>
+</body>
+</html>
